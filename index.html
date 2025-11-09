@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #no {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hi, Will you be mine? ❤️</h1>
+    <div class="buttons">
+        <button id="yes" onclick="yesClicked()">Yes</button>
+        <button id="no" onmouseover="moveNoButton()">No</button>
+    </div>
+
+    <script>
+        function yesClicked() {
+            document.body.innerHTML = '<h1>Yay! 🥰 I knew you would say yes! 💖</h1><h2>Love you ❤️</h2>';
+        }
+
+        function moveNoButton() {
+            let noButton = document.getElementById("no");
+            let x = Math.random() * (window.innerWidth - 30);
+            let y = Math.random() * (window.innerHeight - 30);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
